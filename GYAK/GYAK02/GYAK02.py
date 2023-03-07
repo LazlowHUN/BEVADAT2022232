@@ -24,7 +24,8 @@ def create_array(size:tuple = (2,2)) -> np.array:
 #set_one()
 
 def set_one(arr:np.array) -> np.array:
-    return np.fill_diagonal(arr,1)
+    np.fill_diagonal(arr,1)
+    return arr
 
 # %%
 # Transzponáld a paraméterül kapott mártix-ot:
