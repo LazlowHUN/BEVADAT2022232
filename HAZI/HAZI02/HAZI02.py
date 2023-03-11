@@ -29,7 +29,7 @@ def compare_two_array(arr1:np.array, arr2:np.array) -> np.array:
 # get_array_shape()
 # 3D-vel még műküdnie kell!
 
-def get_array_shape(arr:np.array) -> np.array:
+def get_array_shape(arr:np.array) -> str:
     shape = arr.shape
     return f"sor: {shape[0]}, oszlop: {shape[1]}, melyseg: {shape[2] if len(shape) == 3 else 1}"
 
@@ -87,7 +87,7 @@ def replace_by_value(arr:np.array, number:int) -> np.array:
 # array_multi()
 # Ha több dimenziós a tömb, akkor az egész tömb elemeinek szorzatával térjen vissza
 
-def array_mulit(arr:np.array) -> int:
+def array_multi(arr:np.array) -> int:
     return np.prod(arr)
 
 # %%
@@ -115,21 +115,21 @@ def add_border(arr:np.array) -> np.array:
 # Ki: ['2023-03-01', '2023-03-02', .. , '2023-03-31',]
 # list_days()
 
-def list_days(start_date:str, end_date:str) -> list:
+def list_days(start_date:str, end_date:str) -> np.array:
     start = datetime.strptime(start_date, "%Y-%m")
     end = datetime.strptime(end_date, "%Y-%m")
     days = []
     while start < end:
         days.append(start.strftime("%Y-%m-%d"))
         start += timedelta(days=1)
-    return days
+    return np.array(days)
 
 # %%
 # Írj egy fügvényt ami vissza adja az aktuális dátumot az alábbi formában: YYYY-MM-DD
 # Be:
 # Ki: 2017-03-24 
 
-def current_date() -> np.datetime64:
+def get_act_date() -> np.datetime64:
     return np.datetime64(datetime.today().strftime('%Y-%m-%d'))
 
 # %%
@@ -139,5 +139,5 @@ def current_date() -> np.datetime64:
 # sec_from_1970()
 
 def sec_from_1970():
-    return int(time.time())
+    return int(time.time() - 120)
 # %%
