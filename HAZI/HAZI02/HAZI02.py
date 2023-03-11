@@ -1,6 +1,6 @@
 # %%
 import numpy as np
-
+import time
 from datetime import datetime, timedelta
 
 # %%
@@ -138,10 +138,6 @@ def current_date() -> np.datetime64:
 # Ki: másodpercben az idó, int-é kasztolva
 # sec_from_1970()
 
-def sec_from_1970() -> int:
-    start = np.datetime64('1970-01-01T00:02:00')
-    current = np.datetime64('now')
-    secs = (current - start) / np.timedelta64(1,'s')
-    return int(secs)
-
-
+def sec_from_1970():
+    return int(time.time())
+# %%
