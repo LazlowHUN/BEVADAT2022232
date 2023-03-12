@@ -30,8 +30,11 @@ def compare_two_array(arr1:np.array, arr2:np.array) -> np.array:
 # 3D-vel még műküdnie kell!
 
 def get_array_shape(arr:np.array) -> str:
-    shape = arr.shape
-    return f"sor: {shape[0]}, oszlop: {shape[1]}, melyseg: {shape[2] if len(shape) == 3 else 1}"
+    ndim = arr.ndim
+    if ndim > 3:
+       return "Túl magas dimenziójú tömb"
+    shape = f"sor: {arr.shape[0] if ndim >= 1 else 0}, oszlop: {arr.shape[1] if ndim >= 2 else 0}, melyseg: {arr.shape[2] if ndim == 3 else 1}"
+    return shape
 
 # %%
 # Készíts egy olyan függvényt, aminek segítségével elő tudod állítani egy neurális hálózat tanításához szükséges Y-okat egy numpy array-ből. 
