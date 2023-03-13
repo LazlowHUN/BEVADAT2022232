@@ -119,13 +119,7 @@ def add_border(arr:np.array) -> np.array:
 # list_days()
 
 def list_days(start_date:str, end_date:str) -> np.array:
-    start = datetime.strptime(start_date, "%Y-%m")
-    end = datetime.strptime(end_date, "%Y-%m")
-    days = []
-    while start < end:
-        days.append(start.strftime("%Y-%m-%d"))
-        start += timedelta(days=1)
-    return np.array(days)
+    return np.array(np.arange(np.datetime64(start_date),np.datetime64(end_date),np.timedelta64(1,'D')))
 
 # %%
 # Írj egy fügvényt ami vissza adja az aktuális dátumot az alábbi formában: YYYY-MM-DD
