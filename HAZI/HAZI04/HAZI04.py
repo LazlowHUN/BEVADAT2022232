@@ -112,8 +112,6 @@ def add_age(df_data:pd.DataFrame) -> pd.core.frame.DataFrame:
     new_df['age'] = age
     return new_df
 
-add_age(df_data)
-
 # %%
 '''
 Készíts egy függvényt, ami vissza adja a legjobb teljesítményt elérő női diák pontszámait.
