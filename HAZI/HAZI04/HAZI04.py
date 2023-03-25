@@ -88,7 +88,7 @@ függvény neve: average_scores
 '''
 
 # %%
-def avarage_scores(df_data:pd.DataFrame) -> pd.core.frame.DataFrame:
+def average_scores(df_data:pd.DataFrame) -> pd.core.frame.DataFrame:
     new_df = df_data.copy()
     df_average_scores = new_df.groupby('parental level of education').mean()
     return df_average_scores
@@ -108,9 +108,10 @@ függvény neve: add_age
 def add_age(df_data:pd.DataFrame) -> pd.core.frame.DataFrame:
     new_df = df_data.copy()
     random.seed(42)
-    age = [random.randint(18, 66) for _ in range(len(new_df))]
+    age = [random.randint(18, 67) for _ in range(len(new_df))]
     new_df['age'] = age
     return new_df
+
 
 # %%
 '''
@@ -229,11 +230,10 @@ függvény neve: ethnicity_pie_chart
 def ethnicity_pie_chart(df_data:pd.DataFrame):
     new_df = df_data.copy()
     counts = new_df['race/ethnicity'].value_counts()
+    percentages_by_ethnicity = 100 * counts / counts.sum()
 
     fig, ax = plt.subplots()
-    ax.pie(counts.values, labels=counts.index, autopct='%1.1f%%')
+    ax.pie(percentages_by_ethnicity, labels=percentages_by_ethnicity.index, autopct='%1.1f%%')
 
     ax.set_title('Proportion of Students by Race/Ethnicity')
     return fig
-
-
