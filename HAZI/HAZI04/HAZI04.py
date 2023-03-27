@@ -150,9 +150,9 @@ függvény neve: add_grade
 # %%
 def add_grade(df_data:pd.DataFrame) -> pd.core.frame.DataFrame:
     new_df = df_data.copy()
-    new_df['grade'] = pd.cut((new_df['math score'] + new_df['reading score'] + new_df['writing score']) / 3, 
-                         bins=[0, 0.6, 0.7, 0.8, 0.9, 1], 
-                         labels=['F', 'D', 'C', 'B', 'A'])
+    new_df['grade']=(new_df['math score']+new_df['reading score']+new_df['writing score'])/3
+    new_df['grade']=new_df['grade'].apply(lambda x: 'A' if x >= 90 else 'B' if x >= 80 else 'C' if x >= 70 else 'D' if x >= 60 else 'F')
+
     return new_df
 
 # %%
