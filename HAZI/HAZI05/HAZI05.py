@@ -1,4 +1,5 @@
 import numpy as np
+import random
 import pandas as pd
 import seaborn as sns
 from typing import Tuple
@@ -26,7 +27,7 @@ class KNNClassifier:
     
     @staticmethod 
     def load_csv(csv_path:str) ->Tuple[pd.DataFrame,pd.Series]:
-        np.random.seed(42)
+        random.seed(42)
         dataset = pd.read_csv(csv_path, header=None)
         dataset = dataset.sample(frac=1, random_state=42).reset_index(drop=True)
         x,y = dataset.iloc[:,:4],dataset.iloc[:,-1]
