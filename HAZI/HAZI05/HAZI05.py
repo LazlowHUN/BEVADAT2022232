@@ -33,7 +33,6 @@ class KNNClassifier:
         x,y = dataset.iloc[:,:4],dataset.iloc[:,-1]
         return x,y
     
-    #Train test split try optim
     def train_test_split(self,features:pd.DataFrame,labels:pd.Series) -> None:
         test_size = int(len(features)*self.test_split_ratio)
         train_size = len(features) - test_size
