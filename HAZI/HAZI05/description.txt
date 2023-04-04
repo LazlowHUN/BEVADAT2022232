@@ -1,0 +1,9 @@
+First, I imported the necessary packages for the project and defined the path to the CSV file. Then, I initialized the class constructor with two class-level variables. I created a property for one of them and also created a static method that imports the CSV file and shuffles the values in the DataFrame with a seed of 42 to randomize them.
+
+Next, I split the DataFrame into two sections: one for the required data and another for the predicted outcome. I also created a Train Test Split method that splits the data into train and test data with a specified percentage to use for the KNN algorithm.
+
+I implemented the Euclidean method to measure the distance between consecutive points and created a predict function that makes predictions based on the given data. The function also sorts the predictions to make them easier to work with.
+
+The accuracy function calculates the accuracy of the program, which is a good indicator of its performance on unknown data. The confusion matrix shows the program's good and bad predictions in a heatmap.
+
+Lastly, I created the best_k_accuracy function, which returns the best k value with the highest accuracy.
