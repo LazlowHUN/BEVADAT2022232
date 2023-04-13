@@ -59,7 +59,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from DecisionTreeClassifier import DecisionTreeClassifier
 
-data = pd.read_csv("HAZI/HAZI06/uj.csv")
+data = pd.read_csv("HAZI/HAZI06/data/uj.csv")
 
 X = data.iloc[:, :-1].values
 Y = data.iloc[:, -1].values.reshape(-1, 1)
