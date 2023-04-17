@@ -65,7 +65,7 @@ X = data.iloc[:, :-1].values
 Y = data.iloc[:, -1].values.reshape(-1, 1)
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=.2, random_state=41)
 
-classifier = DecisionTreeClassifier(min_samples_split=90, max_depth=12)
+classifier = DecisionTreeClassifier(min_samples_split=110, max_depth=11)
 
 classifier.fit(X_train, Y_train)
 
