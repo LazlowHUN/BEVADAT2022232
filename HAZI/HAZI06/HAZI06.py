@@ -71,3 +71,19 @@ classifier.fit(X_train, Y_train)
 
 Y_pred = classifier.predict(X_test)
 print(accuracy_score(Y_test, Y_pred))
+
+
+'''
+A modell megértése után, kipróbáltam a legelején a min_samples_split=3, max_depth=3 beállításokkal betanítani a modellt, amely nem érte el a 80%-t. Ezt követően próbálkoztam még a '3' közelében lévő értékkel az '5'-el amely által kapott accuracy érték nem igazán változott az elődjéhez képest. Így nagyobb számokkal próbáltam meg. A 25-10 felállásban már80% fölötti eredményt hozott, de tovább próbálkoztam manuálisan hátha valami nagyobb értéket is kapok. Végül a legjobbnak a min_samples_split=110, max_depth=11 paraméterek bizonyultak a 10 közül. Próbálkoztam grid search segítségével meghatározni a paramétereket de hibára futottam és sajnos nem tudtam megoldani, így maradtam a manuális eredménynél.
+
+min_samples_split=3,    max_depth=3   accuracy -> 0.7839166666666667
+min_samples_split=5,    max_depth=5   accuracy -> 0.7885833333333333
+min_samples_split=25,   max_depth=10  accuracy -> 0.8003333333333333
+min_samples_split=30,   max_depth=10  accuracy -> 0.80075
+min_samples_split=40,   max_depth=10  accuracy -> 0.8014166666666667
+min_samples_split=50,   max_depth=15  accuracy -> 0.794
+min_samples_split=90,   max_depth=12  accuracy -> 0.80175
+min_samples_split=90,   max_depth=10  accuracy -> 0.8018333333333333
+min_samples_split=110,  max_depth=11  accuracy -> 0.80275
+min_samples_split=90,  max_depth=12  accuracy -> 0.80175
+'''
