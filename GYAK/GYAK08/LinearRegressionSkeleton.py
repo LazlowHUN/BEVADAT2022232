@@ -32,9 +32,6 @@ class LinearRegression:
             if i % 100 == 0:
                 print(np.mean(y-self.y_pred))
 
-
-
-
     def predict(self, X):
         pred = []
         for x in X:
