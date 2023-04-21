@@ -1,9 +1,4 @@
 import numpy as np
-from sklearn.datasets import load_iris
-import pandas as pd
-from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
-
 
 class LinearRegression:
     def __init__(self, epochs: int = 1000, lr: float = 1e-3):
@@ -32,9 +27,13 @@ class LinearRegression:
             if i % 100 == 0:
                 print(np.mean(y-self.y_pred))
 
-    def predict(self, X):
         pred = []
         for x in X:
-            y_pred = self.m*x + self.c
+            y_pred = self.m * x + self.c
             pred.append(y_pred)
-        print(pred)
+
+        return y_pred
+
+    def predict(self, X):
+        y_pred = self.m * X + self.c
+        return y_pred
