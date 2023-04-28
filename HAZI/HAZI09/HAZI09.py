@@ -13,11 +13,6 @@ class KMeansOnDigits():
     def __init__(self, n_clusters, random_state):
         self.n_clusters = n_clusters
         self.random_state = random_state
-        self.digits = None
-        self.clusters = None
-        self.labels = None
-        self.accuracy = None
-        self.math = None
 
     def load_dataset(self):
         self.digits = dt.load_digits()
