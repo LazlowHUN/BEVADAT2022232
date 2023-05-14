@@ -12,14 +12,8 @@ függvény neve: cifar100_data
 '''
 def cifar100_data():
     (train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.cifar100.load_data()
-    
-    train_images = train_images.astype('float32') / 255.0
-    test_images = test_images.astype('float32') / 255.0
-    
-    num_classes = 100
-    train_labels = tf.keras.utils.to_categorical(train_labels, num_classes)
-    test_labels = tf.keras.utils.to_categorical(test_labels, num_classes)
-    
+    train_images = train_images / 255.0
+    test_images = test_images / 255.0
     return train_images, train_labels, test_images, test_labels
 
 
